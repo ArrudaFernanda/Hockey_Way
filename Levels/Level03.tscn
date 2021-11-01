@@ -1,0 +1,70 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Level01.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Disco.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BlueLine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/arena.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Goalie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ArenaCircle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Audience.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyLevel03.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnemyColliderRight.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/EnemyColliderLeft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Transition_in.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/CrowdAmbience.tscn" type="PackedScene" id=15]
+
+[node name="Level03" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200.013, 301.606 )
+scale = Vector2( 1.4, 1.99 )
+texture = ExtResource( 6 )
+
+[node name="Audience" parent="." instance=ExtResource( 9 )]
+position = Vector2( 203.77, 70.4204 )
+
+[node name="BlueLine" parent="." instance=ExtResource( 5 )]
+position = Vector2( 196.838, 733.379 )
+
+[node name="Goal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 202.427, 162.273 )
+
+[node name="Disco" parent="." instance=ExtResource( 3 )]
+position = Vector2( 390, 725 )
+
+[node name="ArenaCircle" parent="." instance=ExtResource( 8 )]
+position = Vector2( 89.19, 320 )
+
+[node name="ArenaCircle2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 308.693, 320 )
+
+[node name="Goalie" parent="." instance=ExtResource( 7 )]
+position = Vector2( 234, 166.312 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 214.258, 687 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = -1
+limit_right = 400
+limit_bottom = 790
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="EnemyColliderLeft" parent="." instance=ExtResource( 13 )]
+position = Vector2( 58.271, 352 )
+
+[node name="EnemyColliderRight" parent="." instance=ExtResource( 11 )]
+position = Vector2( 340, 352 )
+
+[node name="EnemyLevel03" parent="." instance=ExtResource( 10 )]
+position = Vector2( 21.4058, -9.51367 )
+
+[node name="Transition_in" parent="." instance=ExtResource( 14 )]
+
+[node name="CrowdAmbience" parent="." instance=ExtResource( 15 )]

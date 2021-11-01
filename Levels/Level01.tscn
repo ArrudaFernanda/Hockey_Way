@@ -1,0 +1,77 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/arena.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ArenaCircle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Goalie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Audience.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Level01.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/BlueLine.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Disco.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Transition_in.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/EnemyColliderLeft.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/EnemyColliderRight.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/MsgTutorial.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/DragDrop.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Whistle.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/CrowdAmbience.tscn" type="PackedScene" id=17]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200.013, 301.606 )
+scale = Vector2( 1.4, 1.99 )
+texture = ExtResource( 1 )
+
+[node name="Audience" parent="." instance=ExtResource( 5 )]
+position = Vector2( 203.77, 70.4204 )
+
+[node name="BlueLine" parent="." instance=ExtResource( 8 )]
+position = Vector2( 196.838, 733.379 )
+
+[node name="Goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 202.427, 162.273 )
+
+[node name="Disco" parent="." instance=ExtResource( 9 )]
+position = Vector2( 390, 725 )
+
+[node name="ArenaCircle" parent="." instance=ExtResource( 3 )]
+position = Vector2( 89.19, 320 )
+
+[node name="ArenaCircle2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 308.693, 320 )
+
+[node name="Goalie" parent="." instance=ExtResource( 4 )]
+position = Vector2( 234, 166.312 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 214.258, 688 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = -1
+limit_right = 400
+limit_bottom = 790
+
+[node name="HUD" parent="." instance=ExtResource( 10 )]
+
+[node name="EnemyColliderLeft" parent="." instance=ExtResource( 12 )]
+position = Vector2( 13.0813, 524.44 )
+
+[node name="EnemyColliderRight" parent="." instance=ExtResource( 13 )]
+position = Vector2( 375.789, 524.44 )
+
+[node name="Transition_in" parent="." instance=ExtResource( 11 )]
+
+[node name="MsgTutorial" parent="." instance=ExtResource( 14 )]
+position = Vector2( 165, 330 )
+
+[node name="DragDrop" parent="." instance=ExtResource( 15 )]
+position = Vector2( 293.734, 548.225 )
+
+[node name="Whistle" parent="." instance=ExtResource( 16 )]
+
+[node name="CrowdAmbience" parent="." instance=ExtResource( 17 )]
