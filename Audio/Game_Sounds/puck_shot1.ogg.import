@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/puck_shot1.ogg-8a1d266d3fcf1d54b96e14d3d5339c53.oggstr"
+
+[deps]
+
+source_file="res://Audio/Game_Sounds/puck_shot1.ogg"
+dest_files=[ "res://.import/puck_shot1.ogg-8a1d266d3fcf1d54b96e14d3d5339c53.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whistle_game_start.ogg-3c47d771e140943e821ec28eebaa4faa.oggstr"
+
+[deps]
+
+source_file="res://Audio/Game_Sounds/whistle_game_start.ogg"
+dest_files=[ "res://.import/whistle_game_start.ogg-3c47d771e140943e821ec28eebaa4faa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

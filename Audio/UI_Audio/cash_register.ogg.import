@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cash_register.ogg-188c157aec5004ecd010d5db5c71bf47.oggstr"
+
+[deps]
+
+source_file="res://Audio/UI_Audio/cash_register.ogg"
+dest_files=[ "res://.import/cash_register.ogg-188c157aec5004ecd010d5db5c71bf47.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
