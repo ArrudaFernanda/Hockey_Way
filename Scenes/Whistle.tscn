@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Whistle.gd" type="Script" id=1]
+[ext_resource path="res://Audio/Game_Sounds/whistle_game_start.ogg" type="AudioStream" id=2]
+
+[node name="Whistle" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
+script = ExtResource( 1 )

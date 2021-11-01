@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Audio/UI_Audio/cash_register.ogg" type="AudioStream" id=1]
+
+[node name="BuyButtons" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )

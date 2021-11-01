@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Audio/Game_Sounds/ambience_crowd_short.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/CrowdAmbience.gd" type="Script" id=2]
+
+[node name="CrowdAmbience" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )

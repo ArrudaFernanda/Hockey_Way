@@ -1,0 +1,967 @@
+[gd_scene load_steps=66 format=2]
+
+[ext_resource path="res://Fonts/FredokaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/energy1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/coin_idle4.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Stuffs.gd" type="Script" id=5]
+[ext_resource path="res://Assets/hockey_disco7.png" type="Texture" id=6]
+[ext_resource path="res://Assets/playmedia3.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/StuffsCash.gd" type="Script" id=8]
+[ext_resource path="res://Assets/storeicon4.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Coins.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/EnergyRecover.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/coins_pile4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/coins_pile5.png" type="Texture" id=13]
+[ext_resource path="res://Assets/coins_pile3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/go_back2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/hockey_sticks5.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/StoreScreen.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Chances.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/MusicGame.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/GeneralButtons.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/BuyButtons.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/AddItemsAudio.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/CoinsAudio.tscn" type="PackedScene" id=23]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.34902, 0.741176, 0.847059, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.282353, 0.294118, 0.968627, 1 )
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.282353, 0.294118, 0.968627, 0.666667 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.898039, 0.0156863, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.282353, 0.294118, 0.968627, 0.666667 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.898039, 0.0156863, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.282353, 0.294118, 0.968627, 0.666667 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.898039, 0.0156863, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=7]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.235294, 0.364706, 0.894118, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.988235, 0.960784, 0.0156863, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.972549, 0.505882, 0.505882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.482353, 0.27451, 0.27451, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=11]
+TabContainer/colors/font_color_bg = Color( 0.69, 0.69, 0.69, 1 )
+TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = null
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 8 )
+TabContainer/styles/tab_bg = SubResource( 9 )
+TabContainer/styles/tab_disabled = null
+TabContainer/styles/tab_fg = SubResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="DynamicFont" id=13]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.580392, 0.615686, 0.243137, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id=15]
+Panel/styles/panel = SubResource( 14 )
+
+[sub_resource type="DynamicFont" id=16]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 1, 0.898039, 0.0156863, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.768627, 0.941176, 0.180392, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.768627, 0.941176, 0.180392, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=21]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 1, 0.898039, 0.0156863, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.768627, 0.941176, 0.180392, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=25]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 1, 0.898039, 0.0156863, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.768627, 0.941176, 0.180392, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.768627, 0.941176, 0.180392, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=30]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=31]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.235294, 0.364706, 0.894118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.235294, 0.364706, 0.894118, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.988235, 0.960784, 0.0156863, 1 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFont" id=39]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 17
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.941176, 0.984314, 0.0196078, 1 )
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=42]
+bg_color = Color( 0.235294, 0.364706, 0.894118, 1 )
+
+[node name="StoreScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/normal = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -112.0
+margin_right = 112.0
+margin_bottom = 112.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="iconStore" type="TextureRect" parent="."]
+margin_left = 126.0
+margin_top = 126.0
+margin_right = 276.0
+margin_bottom = 278.0
+rect_scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelStore" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -34.0
+margin_top = 124.0
+margin_right = 73.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 2 )
+text = "STORE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelMoreCoins" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 420.0
+margin_right = 176.0
+margin_bottom = 445.0
+custom_fonts/font = SubResource( 3 )
+text = "Need more coins?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnBack" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -85.5
+margin_top = -100.0
+margin_right = 85.5
+margin_bottom = -60.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 1, 0.898039, 0.0156863, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "GO BACK"
+icon = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 168.0
+margin_right = -1.0
+margin_bottom = -402.0
+theme = SubResource( 11 )
+custom_styles/tab_fg = SubResource( 12 )
+custom_colors/font_color_fg = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stuffs" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 34.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_fonts/font = SubResource( 13 )
+script = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Stuffs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -188.0
+margin_top = -87.0
+margin_right = 188.0
+margin_bottom = 87.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="control" type="Node2D" parent="TabContainer/Stuffs/RichTextLabel"]
+
+[node name="panelEnergy" type="Panel" parent="TabContainer/Stuffs/RichTextLabel/control"]
+margin_left = 190.0
+margin_right = 302.0
+margin_bottom = 149.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="energy" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+position = Vector2( 58.615, 62 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="quant" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+margin_left = 27.172
+margin_top = 36.0
+margin_right = 47.172
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 16 )
+text = "+1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+margin_left = 34.0
+margin_top = 94.881
+margin_right = 98.0005
+margin_bottom = 110.881
+custom_fonts/font = SubResource( 17 )
+text = "1000"
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+margin_left = 12.0
+margin_top = 90.664
+margin_right = 51.0
+margin_bottom = 135.664
+rect_scale = Vector2( 0.48, 0.48 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnEnergy" type="Button" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.509804, 1, 0.262745, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.996078, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.996078, 0.396078, 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelEnergy"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -31.0
+margin_right = 31.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 22 )
+text = "Energy"
+
+[node name="panelChances" type="Panel" parent="TabContainer/Stuffs/RichTextLabel/control"]
+margin_left = 310.0
+margin_right = 422.0
+margin_bottom = 149.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="discoChances" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+position = Vector2( 58.615, 62 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 6 )
+
+[node name="quant" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+margin_left = 27.172
+margin_top = 36.0
+margin_right = 47.172
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 16 )
+text = "+1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+margin_left = 28.0
+margin_top = 94.881
+margin_right = 108.0
+margin_bottom = 110.881
+custom_fonts/font = SubResource( 17 )
+text = "85000"
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+margin_left = 4.0
+margin_top = 91.9989
+margin_right = 44.0
+margin_bottom = 135.999
+rect_scale = Vector2( 0.48, 0.48 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnChances" type="Button" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_styles/hover = SubResource( 23 )
+custom_styles/pressed = SubResource( 24 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.509804, 1, 0.262745, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.996078, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.996078, 0.396078, 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -36.5
+margin_right = 36.5
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 25 )
+text = "Chances"
+
+[node name="nameChances" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelChances"]
+margin_left = 39.0
+margin_top = 76.0
+margin_right = 79.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 26 )
+text = "Fixed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panelAdsReward" type="Panel" parent="TabContainer/Stuffs/RichTextLabel/control"]
+margin_right = 179.0
+margin_bottom = 145.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="energy_drink16x35" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+position = Vector2( 40, 72 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="hockey_disco" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+position = Vector2( 101.022, 72 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 6 )
+
+[node name="coin" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+position = Vector2( 160, 72 )
+scale = Vector2( 0.65, 0.65 )
+texture = ExtResource( 4 )
+
+[node name="quant" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 14.0
+margin_top = 38.0
+margin_right = 34.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 16 )
+text = "+1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quant2" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 68.0
+margin_top = 38.0
+margin_right = 88.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 16 )
+text = "+3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quant3" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 120.0
+margin_top = 38.0
+margin_right = 156.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 16 )
+text = "+1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnWatch" type="Button" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_bottom = 5.0
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+custom_fonts/font = SubResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spriteBtn" type="Sprite" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+position = Vector2( 55, 138.75 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 7 )
+
+[node name="labelBtn" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 70.0
+margin_top = 128.367
+margin_right = 132.0
+margin_bottom = 148.367
+custom_fonts/font = SubResource( 31 )
+text = "WATCH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.5
+margin_right = 40.5
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 32 )
+text = "Package"
+
+[node name="nameEnergy" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 3.0
+margin_top = 88.0
+margin_right = 51.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 33 )
+text = "Energy"
+
+[node name="nameChances" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 75.0
+margin_top = 88.0
+margin_right = 115.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 34 )
+text = "Extra"
+
+[node name="nameCoins" type="Label" parent="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward"]
+margin_left = 131.0
+margin_top = 88.0
+margin_right = 171.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 35 )
+text = "Coins"
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stuffs"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_bottom = 2.0
+custom_styles/scroll = SubResource( 36 )
+max_value = 88.0
+page = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinsAudio" parent="TabContainer/Stuffs" instance=ExtResource( 23 )]
+
+[node name="AddItemsAudio" parent="TabContainer/Stuffs" instance=ExtResource( 22 )]
+
+[node name="GeneralButtons" parent="TabContainer/Stuffs" instance=ExtResource( 20 )]
+
+[node name="TabContainer2" type="TabContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 55.0
+margin_bottom = 275.0
+custom_styles/tab_fg = SubResource( 37 )
+custom_styles/panel = SubResource( 38 )
+custom_colors/font_color_fg = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StuffsCash" type="Tabs" parent="TabContainer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 34.0
+margin_right = -10.0
+margin_bottom = -10.0
+drag_to_rearrange_enabled = true
+script = ExtResource( 8 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer2/StuffsCash"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="TabContainer2/StuffsCash/RichTextLabel"]
+
+[node name="panelA" type="Panel" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D"]
+margin_right = 128.0
+margin_bottom = 149.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textQuant" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelA"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -47.5
+margin_right = 47.5
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 39 )
+text = "42000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelA"]
+position = Vector2( 64.655, 60 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 14 )
+
+[node name="textPrice" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelA"]
+margin_left = 42.9463
+margin_top = 96.7471
+margin_right = 88.9463
+margin_bottom = 118.747
+custom_fonts/font = SubResource( 40 )
+text = "0.99 $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnA" type="Button" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelA"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.509804, 1, 0.262745, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.996078, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.996078, 0.396078, 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panelB" type="Panel" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D"]
+margin_left = 140.0
+margin_right = 268.0
+margin_bottom = 149.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textQuant" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelB"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -47.5
+margin_right = 47.5
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 39 )
+text = "378000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelB"]
+position = Vector2( 64.655, 60 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 12 )
+
+[node name="textPrice" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelB"]
+margin_left = 42.9463
+margin_top = 96.7471
+margin_right = 88.9463
+margin_bottom = 118.747
+custom_fonts/font = SubResource( 40 )
+text = "8.49 $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnB" type="Button" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelB"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.509804, 1, 0.262745, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.996078, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.996078, 0.396078, 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panelC" type="Panel" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D"]
+margin_left = 280.0
+margin_right = 408.0
+margin_bottom = 149.0
+theme = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textQuant" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelC"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -47.5
+margin_right = 47.5
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 39 )
+text = "504000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelC"]
+position = Vector2( 64.655, 60 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 13 )
+
+[node name="textPrice" type="Label" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelC"]
+margin_left = 42.9463
+margin_top = 96.7471
+margin_right = 88.9463
+margin_bottom = 118.747
+custom_fonts/font = SubResource( 40 )
+text = "10.79 $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnC" type="Button" parent="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelC"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.509804, 1, 0.262745, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.996078, 0.396078, 1 )
+custom_colors/font_color_pressed = Color( 0.894118, 0.996078, 0.396078, 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBar2" type="HScrollBar" parent="TabContainer2/StuffsCash"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.749161
+margin_top = -10.7861
+margin_right = -0.749146
+margin_bottom = 5.21393
+custom_styles/scroll = SubResource( 42 )
+max_value = 64.0
+page = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButtons" parent="TabContainer2/StuffsCash" instance=ExtResource( 21 )]
+
+[node name="Coins" parent="." instance=ExtResource( 10 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -389.0
+margin_top = 15.0
+margin_right = -349.0
+margin_bottom = 55.0
+
+[node name="EnergyRecover" parent="." instance=ExtResource( 11 )]
+margin_left = 282.0
+margin_top = 26.0
+margin_right = 322.0
+margin_bottom = 66.0
+
+[node name="Chances" parent="." instance=ExtResource( 18 )]
+position = Vector2( 11, 64 )
+
+[node name="MusicGame" parent="." instance=ExtResource( 19 )]
+
+[node name="GeneralButtons" parent="." instance=ExtResource( 20 )]
+
+[connection signal="pressed" from="btnBack" to="." method="_on_btnBack_pressed"]
+[connection signal="pressed" from="TabContainer/Stuffs/RichTextLabel/control/panelEnergy/btnEnergy" to="TabContainer/Stuffs" method="_on_btnEnergy_pressed"]
+[connection signal="pressed" from="TabContainer/Stuffs/RichTextLabel/control/panelChances/btnChances" to="TabContainer/Stuffs" method="_on_btnChances_pressed"]
+[connection signal="pressed" from="TabContainer/Stuffs/RichTextLabel/control/panelAdsReward/btnWatch" to="TabContainer/Stuffs" method="_on_btnWatch_pressed"]
+[connection signal="pressed" from="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelA/btnA" to="TabContainer2/StuffsCash" method="_on_btnA_pressed"]
+[connection signal="pressed" from="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelB/btnB" to="TabContainer2/StuffsCash" method="_on_btnB_pressed"]
+[connection signal="pressed" from="TabContainer2/StuffsCash/RichTextLabel/Node2D/panelC/btnC" to="TabContainer2/StuffsCash" method="_on_btnC_pressed"]

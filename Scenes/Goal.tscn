@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/goal_.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Goal.gd" type="Script" id=2]
+[ext_resource path="res://Audio/Game_Sounds/crowd_goal.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Game_Sounds/arena_buzzer_goal.ogg" type="AudioStream" id=5]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -50.1513, 9.93557 )
+b = Vector2( 69.9586, 9.93557 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 3.51517, -32.0159 )
+b = Vector2( 0.237625, 21.4549 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( -1.42813, -10.3609 )
+b = Vector2( -0.1091, 9.94263 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( -3.73388, -43.9166 )
+b = Vector2( -0.518742, 9.18946 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2.16534, 3.87586 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 73.5416, 1.49578 )
+
+[node name="Goal" type="Area2D"]
+position = Vector2( 16.0543, 15.4597 )
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.234116, 0.0468216 )
+scale = Vector2( 0.19, 0.12 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -9.81095, 15.4597 )
+shape = SubResource( 1 )
+
+[node name="rightCorner" type="StaticBody2D" parent="."]
+
+[node name="collisionRight" type="CollisionShape2D" parent="rightCorner"]
+position = Vector2( 70.6801, 9.81096 )
+shape = SubResource( 2 )
+
+[node name="area2dRight" type="Area2D" parent="rightCorner"]
+
+[node name="collisionR" type="CollisionShape2D" parent="rightCorner/area2dRight"]
+position = Vector2( -70.8593, 21.5784 )
+shape = SubResource( 3 )
+
+[node name="leftCorner" type="StaticBody2D" parent="."]
+
+[node name="collisionLeft" type="CollisionShape2D" parent="leftCorner"]
+position = Vector2( -70.4379, 22.3971 )
+shape = SubResource( 4 )
+
+[node name="area2dLeft" type="Area2D" parent="leftCorner"]
+
+[node name="collisionL" type="CollisionShape2D" parent="leftCorner/area2dLeft"]
+position = Vector2( 70.5746, 27.9757 )
+shape = SubResource( 5 )
+
+[node name="topCorner" type="StaticBody2D" parent="."]
+
+[node name="collisionTop" type="CollisionShape2D" parent="topCorner"]
+position = Vector2( -0.527983, -30.4344 )
+shape = SubResource( 6 )
+
+[node name="crowd_goal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="BuzzerGoal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="rightCorner/area2dRight" to="." method="_on_area2dRight_body_entered"]
+[connection signal="body_entered" from="leftCorner/area2dLeft" to="." method="_on_area2dLeft_body_entered"]

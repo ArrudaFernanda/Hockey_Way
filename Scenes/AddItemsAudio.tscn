@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Audio/UI_Audio/add_items.ogg" type="AudioStream" id=1]
+
+[node name="AddItemsAudio" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
