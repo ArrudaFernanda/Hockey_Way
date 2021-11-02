@@ -19,6 +19,3 @@ var energy = 5
 #Determina se coins deve girar ou não, manipulada em RestartScreen
 #e Coins:
 var runCoins = false
-#Remover?
-var audio : bool
-
