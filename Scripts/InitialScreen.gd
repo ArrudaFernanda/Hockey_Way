@@ -1,6 +1,5 @@
 extends Control
 
-class_name InitialScreen
 
 func _ready():
 	if Data.music_exist() == false or Data.music_exist() == null:
