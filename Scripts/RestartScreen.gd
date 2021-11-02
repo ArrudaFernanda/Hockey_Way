@@ -2,6 +2,8 @@ extends Control
 
 
 func _ready():
+	#Som de moedas pois é suposto que se tenha ganho
+	#na partida:
 	if Data.load_audio():
 		$Coins/controlCoins/coinsAudio.play()
 	else:
@@ -12,18 +14,20 @@ func _ready():
 		Data.save_energy(Global.energy)
 	elif Data.is_energy():
 		Data.save_energy(Data.load_energy() - 1)
-		
+	
+	#Não necessário pois o sprite de energia já mostra que acabou
 	if Global.energy == 0:
 		print("Veja anúncios ou compre mais energia!!!")
 	
 	Global.runCoins = true
+	#Remover?
 	Global.chances = 10 + Data.load_chances()
 
 func _on_btnMore_pressed():
 	play_audio_btn()
 	get_tree().change_scene("res://Scenes/StoreScreen.tscn")
 
-
+#Torna visivel para o usuario que ele está na tela de restart
 func _on_InitialButtons_tree_entered():
 	$InitialButtons/btnStart.set_text("RESTART")
 
