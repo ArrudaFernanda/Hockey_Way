@@ -14,6 +14,11 @@ func _process(delta):
 	elif is_left:
 		position.x += velocity
 
+#Recebe o parametro que diz em qual colidiu e assim sabemos
+#para onde deve ir, se colidiu na direita tem ir pra esquerda e
+#vice-versa. Assim que colide process recebe false para que por 1
+#segundo o inimigo fique parado, quando timeout process recebe true
+#e ele volta a se mexer.
 func idle(direcao):
 	set_process(false)
 	$Timer.start()
