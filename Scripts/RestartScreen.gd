@@ -16,11 +16,16 @@ func _ready():
 		Data.save_energy(Data.load_energy() - 1)
 	
 	#Não necessário pois o sprite de energia já mostra que acabou
-	if Global.energy == 0:
-		print("Veja anúncios ou compre mais energia!!!")
+	#será deixado aqui pois pode ser usado futuramente pra chamar
+	#EnergyPopup:
+	#if Global.energy == 0:
+		#print("Veja anúncios ou compre mais energia!!!")
 	
 	Global.runCoins = true
-	#Remover?
+	#Lógica:
+	#Depois da partida Global.chances foi zerada entao
+	#quando finaliza a partida temos que restaurar Global.chances
+	#para que tudo funcione adequadamente:
 	Global.chances = 10 + Data.load_chances()
 
 func _on_btnMore_pressed():
